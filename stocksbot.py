@@ -1,5 +1,4 @@
 # Reddit bot made for /r/stocks.  Summon with '$' followed by the ticker symbol.  
-# Created by /u/chuiy
 
 #import Python Reddit API Wrapper
 import humanize
@@ -17,11 +16,12 @@ from bs4 import BeautifulSoup
 
 alreadyDone = open('done.txt', 'a+')
 
-user_agent = "/u/StocksBot created by /u/chuiy"
+user_agent = "/u/StocksBot"
 
 r = praw.Reddit(user_agent=user_agent)
-r.login('stocksBot', 'bosox1')
-ownName = "stocksBot"
+#enter your username into the first argument, and your password into the second argument
+r.login('enter your username here', 'enter your password here')
+ownName = "enter your username again"
 
 while True:
 	try:
@@ -89,7 +89,7 @@ while True:
 						'**Brief Summary**\n\n'
 						''+ getSummary[1].text[:450] + '..\n\n'
 						'Hi, I\'m /u/stocksBot. Summon me with "$$" immeditely followed by the ticker symbol and I will reply with information about the stock.  \n\n'
-						'Created by /u/chuiy.  |  Contribute on GitHub')
+						'Created by [redacted].  |  Contribute on GitHub')
 	
 						alreadyDone.write(comment.id)
 						#add comment.id to the set alreadyDone
